@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Piano</title>
+    <style>
+        
+        .piano {
+        display: flex;
+        justify-content: center;
+      }
+
+      .tecla {
+        border: 1px solid black;
+        width: 50px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .sostenido {
+        background-color: black;
+        color: white;
+        max-width: 40px;
+        max-height: 120px;
+        margin-left: -20px;
+        margin-right: -20px;
+        z-index: 1;
+      }
+
+    </style>
 </head>
 <body>
-    
+    <div class="piano">
+        <div class="tecla sostenido gs" onclick="reproducir('gs')">Sol#</div>
+        <div class="tecla a" onclick="reproducir('a')">La</div>
+    </div>
+    <br>
+    <audio src="a.wav" id="audio-a" type="audio/wav"></audio>
+    <audio src="gs.wav" id="audio-gs" type="audio/wav"></audio>
+    <script>
+        function reproducir(nota){
+            document.getElementById(`audio-${nota}`).play();
+        }
+    </script>
 </body>
 </html>
