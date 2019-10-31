@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .piano {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tecla {
+            border: 1px solid black;
+            width: 50px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sostenido {
+            background-color: black;
+            color: white;
+            max-width: 40px;
+            max-height: 120px;
+            margin-left: -20px;
+            margin-right: -20px;
+            z-index: 1;
+            }
+
+        h1 {
+                display: flex;
+                justify-content: center;
+            }
+    </style>
 </head>
-<style>
-</style>
+
 <body>
     <div class="piano">
         <div class="tecla c">do</div>
@@ -16,12 +45,20 @@
         <div class="tecla c">re sostenido</div>
         <div class="tecla c">mi</div>
         <div class="tecla c">fa</div>
-        <div class="tecla c">fa sostenido</div>
-        <div class="tecla c">sol</div>
+        <div class="tecla f sostenido" onclick="reproducir('fs');">fa-s</div>
+        <div class="tecla sol" onclick="reproducir('g');">sol</div>
         <div class="tecla c">sol sostenido</div>
         <div class="tecla c">la</div>
         <div class="tecla c">la sostenido</div>
         <div class="tecla c">si</div>
     </div>
+    <audio id="audio-fs" src="fs.wav" type="audio/wav"></audio>
+    <audio id="audio-g" src="g.wav" type="audio/wav"></audio>
+    <script>
+        function reproducir(nota) {
+            document.getElementById(`audio-${nota}`).play();
+        }
+    </script>
 </body>
+
 </html>
