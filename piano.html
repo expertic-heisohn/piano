@@ -42,6 +42,8 @@
         <div class="tecla sol" onclick="reproducir('g');">sol</div>
         <div class="tecla sostenido gs" onclick="reproducir('gs')">Sol#</div>
         <div class="tecla a" onclick="reproducir('a')">La</div>
+        <div class="tecla sostenido as" onclick="reproducir('as');">la-s#</div>
+        <div class="tecla b" onclick="reproducir('b');">b</div>
     </div>
     <br>
     <audio id="audio-c" src="c.wav" type="audio/wav"></audio>
@@ -51,6 +53,8 @@
     <audio id="audio-g" src="g.wav" type="audio/wav"></audio>
     <audio src="a.wav" id="audio-a" type="audio/wav"></audio>
     <audio src="gs.wav" id="audio-gs" type="audio/wav"></audio>
+    <audio id="audio-as" src="as.wav" type="audio/wav"></audio>
+    <audio id="audio-b" src="b.wav" type="audio/wav"></audio>
     <script>
         function reproducir(nota) {
             document.getElementById(`audio-${nota}`).play();
